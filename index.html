@@ -4,334 +4,225 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#ffffff">
-<title>KG-BUSINESS | Strom & Gas vergleichen</title>
-<meta name="description" content="KG-BUSINESS unterstützt Privat- und Geschäftskunden beim Vergleich von Strom- und Gastarifen – kostenlos, unverbindlich und persönlich.">
+<title>KG-BUSINESS | Strom & Gas für Unternehmen</title>
+<meta name="description" content="KG-BUSINESS unterstützt Unternehmen und Privathaushalte beim Strom- und Gasvergleich – persönlich, transparent und unverbindlich.">
 <style>
-:root{
-  --blue:#0b7cff;--blue2:#53c7ff;--green:#19c989;--green2:#66e2b4;
-  --ink:#0b1b2b;--muted:#617282;--line:#dce8f0;--soft:#f6fbff;--soft2:#eefcf7;
-  --white:#fff;--shadow:0 18px 55px rgba(33,86,122,.14);--shadow2:0 28px 80px rgba(11,124,255,.16);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#fff}
-a{text-decoration:none;color:inherit}
-button,input,select,textarea{font:inherit}
-.wrap{width:min(1180px,calc(100% - 34px));margin:auto}
-.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(220,232,240,.8)}
-.navin{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{display:flex;align-items:center;gap:11px;font-weight:950;letter-spacing:.2px}
-.logo{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--green));box-shadow:0 10px 25px rgba(11,124,255,.22)}
-.logo svg{width:24px;height:24px}
-.menu{display:flex;align-items:center;gap:24px;font-size:14px;color:#405361}
-.menu a:hover{color:var(--blue)}
-.menu .cta{padding:12px 17px;border-radius:999px;background:linear-gradient(135deg,var(--blue),#22a7ff);color:#fff;font-weight:850;box-shadow:0 10px 26px rgba(11,124,255,.18)}
-.hero{position:relative;overflow:hidden;background:
- radial-gradient(circle at 8% 10%,rgba(83,199,255,.24),transparent 31%),
- radial-gradient(circle at 90% 10%,rgba(25,201,137,.20),transparent 28%),
- linear-gradient(180deg,#ffffff 0%,#f6fbff 100%)}
-.hero:before{content:"";position:absolute;inset:auto -12% -210px -12%;height:320px;background:linear-gradient(90deg,rgba(11,124,255,.08),rgba(25,201,137,.08));filter:blur(50px)}
-.heroGrid{padding:76px 0 88px;display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center;position:relative}
-.badge{display:inline-flex;align-items:center;gap:9px;padding:9px 13px;background:#fff;border:1px solid var(--line);border-radius:999px;color:#365467;font-size:13px;font-weight:750;box-shadow:0 8px 24px rgba(28,88,130,.08)}
-.badge i{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(25,201,137,.11)}
-h1{font-size:clamp(45px,6vw,72px);line-height:.98;letter-spacing:-2.6px;margin:22px 0 20px}
-.grad{background:linear-gradient(90deg,var(--blue),#2ec7f4,var(--green));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{font-size:19px;line-height:1.72;color:#526575;max-width:650px;margin:0 0 28px}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
-.btn{border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 19px;border-radius:15px;font-weight:900}
-.btnPrimary{background:linear-gradient(135deg,var(--blue),#28a9ff);color:#fff;box-shadow:0 14px 32px rgba(11,124,255,.22)}
-.btnSoft{background:#fff;color:#163041;border:1px solid var(--line)}
-.trustline{display:flex;gap:18px;flex-wrap:wrap;color:#5f7382;font-size:13px}
-.trustline span{display:flex;align-items:center;gap:7px}
-.ok{width:18px;height:18px;border-radius:50%;background:#e8fbf4;color:#0f9f6e;display:grid;place-items:center;font-size:12px;font-weight:900}
-.visual{position:relative}
-.energyCard{background:linear-gradient(145deg,#ffffff,#f7fcff);border:1px solid #dcebf4;border-radius:30px;box-shadow:var(--shadow2);padding:22px;position:relative;overflow:hidden}
-.energyCard:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(83,199,255,.30),transparent 70%);right:-70px;top:-60px}
-.energyTop{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
-.energyTop b{font-size:17px}
-.pill{padding:7px 10px;background:#eafaf5;color:#0c875d;border-radius:999px;font-size:12px;font-weight:850}
-.energySvg{width:100%;height:auto;display:block}
-.float{position:absolute;background:#fff;border:1px solid var(--line);border-radius:18px;padding:13px 15px;box-shadow:var(--shadow);font-size:13px}
-.float strong{display:block;font-size:18px;margin-bottom:2px}
-.f1{left:-24px;bottom:36px}.f2{right:-20px;top:64px}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
-.spark{animation:pulse 2.6s ease-in-out infinite;transform-origin:center}
-.stats{margin-top:-34px;position:relative;z-index:5}
-.statsGrid{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}
-.stat{padding:24px;border-right:1px solid #edf3f7}
-.stat:last-child{border-right:0}.stat b{display:block;font-size:22px}.stat span{font-size:13px;color:#70808d}
-section{padding:88px 0}
-.eyebrow{text-transform:uppercase;letter-spacing:1.8px;color:var(--blue);font-weight:900;font-size:12px}
-h2{font-size:clamp(34px,4.5vw,52px);line-height:1.04;letter-spacing:-1.6px;margin:10px 0 16px}
-.sub{max-width:760px;color:#637484;font-size:18px;line-height:1.7}
-.serviceGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
-.card{border:1px solid #e1ebf1;background:#fff;border-radius:24px;padding:26px;transition:.22s;box-shadow:0 8px 24px rgba(28,85,125,.05)}
-.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-.icon{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;font-size:22px;background:linear-gradient(135deg,#edf8ff,#ecfbf6)}
-.card h3{font-size:20px;margin:18px 0 9px}.card p{color:#667887;line-height:1.62;margin:0}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
-.panel{background:linear-gradient(135deg,#f5fbff,#f1fff9);border:1px solid #dcebf4;border-radius:28px;padding:32px}
-.steps{display:grid;gap:13px;margin-top:22px}
-.stepRow{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px}
-.num{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,var(--blue),var(--green));color:#fff;display:grid;place-items:center;font-weight:900}
-.stepRow h4{margin:1px 0 4px;font-size:17px}.stepRow p{margin:0;color:#6a7a86;line-height:1.5}
-.formCard{background:#fff;border:1px solid #dce8f0;border-radius:28px;padding:28px;box-shadow:var(--shadow)}
-.formHead{display:flex;justify-content:space-between;gap:12px;align-items:center}.formHead h3{margin:0;font-size:24px}
-.progress{height:7px;background:#edf3f6;border-radius:20px;margin:20px 0 22px;overflow:hidden}.progress i{display:block;height:100%;width:33%;background:linear-gradient(90deg,var(--blue),var(--green));transition:.25s}
-.formStep{display:none}.formStep.active{display:block}
-.formStep h4{font-size:25px;margin:0 0 6px}.formStep>p{color:#687a88;margin:0 0 17px;line-height:1.5}
-.choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}.choice{padding:15px;border:1.5px solid #dce7ee;border-radius:15px;background:#fff;font-weight:850;text-align:left;cursor:pointer}
-.choice.selected,.choice:hover{border-color:var(--blue);background:#f0f8ff}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{margin:10px 0}.field label{display:block;font-size:13px;font-weight:850;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;border:1.5px solid #dce7ee;border-radius:14px;padding:14px 15px;outline:none;background:#fff}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(11,124,255,.08)}
-.formActions{display:flex;gap:10px;margin-top:17px}.formActions .btn{flex:1}.small{font-size:11px;color:#7d8a94;line-height:1.45}
-.brands{background:#f7fbfe}
-.sectors{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:28px}.sector{background:#fff;border:1px solid #e0eaf0;border-radius:16px;padding:16px 10px;text-align:center;font-weight:800;font-size:13px}
-.quote{background:linear-gradient(135deg,#0b7cff,#17b6ee 58%,#19c989);border-radius:30px;padding:46px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:28px;box-shadow:0 24px 70px rgba(11,124,255,.20)}
-.quote h2{margin:0 0 10px}.quote p{margin:0;max-width:680px;line-height:1.65;color:#eaf7ff}.quote .btn{background:#fff;color:#0b4f89}
-.faq{display:grid;gap:11px;margin-top:30px}details{border:1px solid #e1ebf1;border-radius:17px;padding:18px 20px;background:#fff}summary{cursor:pointer;font-weight:900}details p{color:#677986;line-height:1.65;margin:12px 0 0}
-footer{background:#f3f8fb;border-top:1px solid #dde8ee;padding:44px 0 24px}.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:30px}.foot h4{margin:0 0 12px}.foot p,.foot a{font-size:14px;line-height:1.85;color:#5e7180}.foot a:hover{color:var(--blue)}.copy{border-top:1px solid #dce7ed;margin-top:28px;padding-top:18px;font-size:12px;color:#7a8994}
-.success{display:none;text-align:center;padding:18px 0}.success .tick{width:58px;height:58px;border-radius:50%;background:#e7fbf3;color:#129f70;display:grid;place-items:center;margin:auto;font-size:28px;font-weight:900}
-
-.photoHero{position:relative;border-radius:32px;overflow:hidden;box-shadow:0 30px 90px rgba(11,124,255,.20);border:1px solid #dcebf4;min-height:510px;background:linear-gradient(135deg,#eaf7ff,#e8fff6)}
-.photoHero img{width:100%;height:100%;min-height:510px;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1);background:#eef8ff}
-.photoHero:hover img{transform:scale(1.025)}
-.photoShade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,31,55,.02) 20%,rgba(4,28,47,.44) 100%);pointer-events:none}
-.heroGlass{position:absolute;left:22px;right:22px;bottom:20px;padding:16px 18px;border-radius:18px;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);display:flex;gap:12px;align-items:center;box-shadow:0 12px 35px rgba(0,0,0,.10)}
-.heroGlassIcon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--green));color:#fff;font-size:20px}
-.heroGlass strong{display:block;font-size:15px}.heroGlass small{display:block;color:#617482;margin-top:3px}
-.showcaseGrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:34px}
-.showcaseCard{position:relative;min-height:440px;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);background:#eaf6fb}
-.showcaseCard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s ease;background:#eef8ff}
-.showcaseCard:hover img{transform:scale(1.035)}
-.showcaseOverlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,25,40,.04) 20%,rgba(7,25,40,.76) 100%)}
-.showcaseContent{position:absolute;left:24px;right:24px;bottom:24px;color:#fff}
-.showcaseContent span{display:inline-block;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.18);backdrop-filter:blur(10px);font-size:12px;font-weight:800;margin-bottom:10px}
-.showcaseContent h3{font-size:28px;line-height:1.05;margin:0 0 8px}.showcaseContent p{margin:0;color:#e6f3fa;line-height:1.55;max-width:500px}
-.reveal{opacity:0;transform:translateY(20px);transition:.65s ease}.reveal.visible{opacity:1;transform:none}
-@media(max-width:930px){.menu a:not(.cta){display:none}.heroGrid,.split{grid-template-columns:1fr}.visual{max-width:650px;margin:auto}.statsGrid,.serviceGrid{grid-template-columns:1fr 1fr}.sectors{grid-template-columns:repeat(3,1fr)}.foot{grid-template-columns:1fr 1fr}}
-@media(max-width:620px){.showcaseGrid{grid-template-columns:1fr}.showcaseCard{min-height:390px}.photoHero,.photoHero img{min-height:410px}.wrap{width:min(100% - 24px,1180px)}.navin{height:68px}.menu .cta{font-size:12px;padding:10px 12px}.heroGrid{padding:44px 0 70px;gap:34px}h1{font-size:45px}.lead{font-size:17px}.f1,.f2{position:static;margin-top:10px}.visual{display:grid}.stats{margin-top:-20px}.statsGrid,.serviceGrid{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid #edf3f7}.sectors{grid-template-columns:1fr 1fr}.choices,.grid2{grid-template-columns:1fr}.quote{padding:30px 24px;display:block}.quote .btn{margin-top:20px}.foot{grid-template-columns:1fr}section{padding:68px 0}}
+:root{--navy:#10265f;--navy2:#0a1a46;--blue:#1592ff;--green:#37d900;--ink:#12203a;--muted:#617083;--line:#e4ebf2;--soft:#f6f9fc;--white:#fff;--shadow:0 18px 55px rgba(16,38,95,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#fff}a{text-decoration:none;color:inherit}button,input,select,textarea{font:inherit}.wrap{width:min(1180px,calc(100% - 36px));margin:auto}
+.topbar{background:var(--navy2);color:#dbe6ff;font-size:13px}.topin{height:38px;display:flex;align-items:center;justify-content:space-between;gap:20px}.topin div{display:flex;gap:20px;align-items:center}.topin a{opacity:.92}.topin a:hover{color:#fff}
+.header{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(228,235,242,.9)}.headin{height:86px;display:flex;align-items:center;justify-content:space-between;gap:26px}
+.brand{display:flex;align-items:center;gap:12px}.brandmark{width:66px;height:58px}.brandtext strong{display:block;font-size:20px;letter-spacing:.3px;color:var(--navy)}.brandtext small{display:block;color:#7b8795;margin-top:2px}
+.menu{display:flex;align-items:center;gap:26px;font-size:14px;font-weight:700;color:#40506a}.menu a{position:relative}.menu a:not(.cta):after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:2px;background:var(--green);transition:.25s}.menu a:hover:after{right:0}.cta{padding:13px 18px;border-radius:14px;background:linear-gradient(135deg,var(--navy),#1847a7);color:#fff;box-shadow:0 10px 26px rgba(16,38,95,.18)}.burger{display:none;width:44px;height:44px;border:0;background:#f4f7fb;border-radius:12px;padding:10px}.burger span{display:block;height:3px;background:var(--navy);border-radius:5px;margin:5px 0}
+.mobileMenu{display:none;position:fixed;inset:124px 0 auto 0;background:#fff;border-top:1px solid var(--line);box-shadow:0 20px 40px rgba(16,38,95,.12);padding:18px;z-index:70}.mobileMenu.open{display:grid}.mobileMenu a{padding:14px 8px;border-bottom:1px solid #edf1f5;font-weight:800}.mobileMenu .cta{margin-top:10px;text-align:center;border-bottom:0}
+.hero{position:relative;min-height:690px;display:grid;align-items:center;overflow:hidden;background:#0a1a46}.hero:before{content:"";position:absolute;inset:0;background:url('assets/0A1E66FA-CE8E-444E-9DD2-E64C977A9344.png') center/cover no-repeat;transform:scale(1.015)}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,19,53,.92) 0%,rgba(5,19,53,.78) 42%,rgba(5,19,53,.20) 72%,rgba(5,19,53,.08) 100%)}.heroContent{position:relative;z-index:2;padding:92px 0 110px;color:#fff;max-width:710px}.eyebrow{display:inline-flex;gap:9px;align-items:center;padding:9px 13px;border-radius:999px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.22);font-size:13px;font-weight:800}.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 6px rgba(55,217,0,.14)}h1{font-size:clamp(48px,6vw,78px);line-height:.98;letter-spacing:-3px;margin:24px 0 20px}.hero p{font-size:20px;line-height:1.65;color:#e2e9f6;max-width:650px}.heroActions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:16px 20px;border-radius:14px;font-weight:900;border:0;cursor:pointer}.btnGreen{background:linear-gradient(135deg,#39df08,#22c500);color:#071c0b;box-shadow:0 16px 38px rgba(55,217,0,.25)}.btnGhost{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.28);color:#fff;backdrop-filter:blur(10px)}.trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:27px;color:#e3eaf4;font-size:13px}.trust span{display:flex;align-items:center;gap:7px}.check{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:rgba(55,217,0,.18);color:#6cff42;font-weight:900}
+.quickbar{position:relative;z-index:4;margin-top:-48px}.quickgrid{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-radius:24px;box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line)}.quick{padding:24px;border-right:1px solid #edf1f6}.quick:last-child{border-right:0}.quick i{display:grid;width:42px;height:42px;border-radius:12px;place-items:center;background:#eff4ff;color:var(--navy);font-style:normal;font-size:21px}.quick b{display:block;margin-top:12px;font-size:17px}.quick small{display:block;color:var(--muted);line-height:1.5;margin-top:5px}
+section{padding:94px 0}.sectionLabel{text-transform:uppercase;letter-spacing:1.9px;color:#2f62c4;font-size:12px;font-weight:900}.sectionTitle{font-size:clamp(34px,4.3vw,54px);line-height:1.04;letter-spacing:-1.8px;margin:10px 0 16px}.sectionSub{font-size:18px;line-height:1.7;color:var(--muted);max-width:760px}
+.serviceGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}.service{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:0 8px 28px rgba(16,38,95,.05);transition:.25s}.service:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.sicon{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,#ecf2ff,#ecffe7);font-size:24px}.service h3{margin:18px 0 9px;font-size:20px}.service p{margin:0;color:var(--muted);line-height:1.65}
+.band{background:var(--soft)}.split{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.imageCard{position:relative;min-height:540px;border-radius:28px;overflow:hidden;box-shadow:var(--shadow)}.imageCard img{position:absolute;width:100%;height:100%;object-fit:cover}.imageCard:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(7,22,55,.72))}.imageCaption{position:absolute;z-index:2;left:28px;right:28px;bottom:28px;color:#fff}.imageCaption b{font-size:29px;display:block;margin-bottom:7px}.imageCaption span{color:#e2e9f4}
+.benefits{display:grid;gap:13px;margin-top:26px}.benefit{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;padding:16px;border:1px solid var(--line);border-radius:16px;background:#fff}.benefit i{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:#ecffe7;color:#1cad00;font-style:normal;font-weight:900}.benefit b{display:block;margin-bottom:4px}.benefit p{margin:0;color:var(--muted);line-height:1.5;font-size:14px}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}.pstep{padding:26px;border:1px solid var(--line);border-radius:22px;background:#fff}.pnum{font-size:13px;font-weight:900;color:#2f62c4}.pstep h3{font-size:19px;margin:12px 0 8px}.pstep p{margin:0;color:var(--muted);line-height:1.6}
+.compare{background:linear-gradient(135deg,#0a1a46,#12357f 63%,#0b612d);color:#fff}.compare .sectionSub{color:#dbe4f5}.formWrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:38px;align-items:start}.formCard{background:#fff;color:var(--ink);border-radius:26px;padding:28px;box-shadow:0 24px 70px rgba(3,16,42,.24)}.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{margin-bottom:12px}.field label{display:block;font-size:12px;font-weight:900;margin-bottom:7px;color:#536176}.field input,.field select,.field textarea{width:100%;padding:14px;border:1.5px solid #dfe6ee;border-radius:13px;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:#2f62c4;box-shadow:0 0 0 4px rgba(47,98,196,.09)}.full{grid-column:1/-1}.formNote{font-size:11px;color:#778493;line-height:1.5;margin-top:10px}
+.branches{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:30px}.branch{padding:18px 12px;border-radius:16px;border:1px solid var(--line);background:#fff;text-align:center;font-size:14px;font-weight:850}.branch span{display:block;font-size:24px;margin-bottom:8px}
+.gallery{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:34px}.galleryMain,.gallerySmall{border-radius:24px;overflow:hidden;position:relative;min-height:450px}.galleryMain img,.gallerySmall img{width:100%;height:100%;object-fit:cover;position:absolute}.gallerySmallGrid{display:grid;grid-template-rows:1fr 1fr;gap:18px}.gallerySmall{min-height:216px}.galleryOverlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(3,16,42,.72))}
+.faq{display:grid;gap:12px;margin-top:30px}.faq details{background:#fff;border:1px solid var(--line);border-radius:17px;padding:18px 20px}.faq summary{font-weight:900;cursor:pointer}.faq p{color:var(--muted);line-height:1.65;margin:12px 0 0}
+.contactBar{background:#f3f7fb;border-top:1px solid var(--line)}.contactGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center}.contactBox{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}.contactPill{padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:14px;font-weight:800}
+footer{background:#071733;color:#cbd6ea;padding:48px 0 24px}.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}.foot h4{color:#fff;margin:0 0 12px}.foot a,.foot p{color:#aebed7;font-size:14px;line-height:1.9}.copy{margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;color:#8ea1c0}
+@media(max-width:980px){.menu{display:none}.burger{display:block}.hero{min-height:620px}.hero:after{background:linear-gradient(90deg,rgba(5,19,53,.92),rgba(5,19,53,.62))}.quickgrid,.serviceGrid,.process{grid-template-columns:1fr 1fr}.split,.formWrap,.contactGrid{grid-template-columns:1fr}.branches{grid-template-columns:repeat(3,1fr)}.foot{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr}}
+@media(max-width:640px){.topbar{display:none}.headin{height:88px}.brandmark{width:58px;height:52px}.brandtext strong{font-size:18px}.brandtext small{font-size:11px}.mobileMenu{inset:88px 0 auto}.hero{min-height:690px}.hero:before{background-position:57% center}.hero:after{background:linear-gradient(180deg,rgba(5,19,53,.88) 0%,rgba(5,19,53,.73) 60%,rgba(5,19,53,.58) 100%)}.heroContent{padding:72px 0 110px}h1{font-size:48px;letter-spacing:-2px}.hero p{font-size:17px}.heroActions{display:grid}.btn{width:100%}.quickbar{margin-top:-38px}.quickgrid,.serviceGrid,.process,.branches,.formGrid{grid-template-columns:1fr}.quick{border-right:0;border-bottom:1px solid #edf1f6}.galleryMain{min-height:380px}.gallerySmallGrid{grid-template-rows:none;grid-template-columns:1fr 1fr}.gallerySmall{min-height:180px}.foot{grid-template-columns:1fr}section{padding:72px 0}.wrap{width:min(100% - 24px,1180px)}}
 </style>
 </head>
 <body>
-<header class="nav">
-  <div class="wrap navin">
-    <a class="brand" href="#start">
-      <span class="logo"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 5 13h6l-1 9 9-13h-6V2Z" fill="white"/></svg></span>
-      <span>KG-BUSINESS</span>
+<div class="topbar">
+  <div class="wrap topin">
+    <div><span>Persönliche Energieberatung aus Duisburg</span><span>Mo–Fr 09:00–18:00</span></div>
+    <div><a href="tel:+4920347966822">☎ +49 203 47 96 68 22</a><a href="mailto:info@kg-business.de">✉ info@kg-business.de</a></div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="wrap headin">
+    <a class="brand" href="#start" aria-label="KG-BUSINESS Startseite">
+      <svg class="brandmark" viewBox="0 0 120 100" aria-hidden="true">
+        <path d="M19 20h20v47H19zM43 11h20v56H43zM67 4h20v63H67z" fill="#142b70"/>
+        <path d="M13 69c20 23 64 23 92-2-25 12-55 15-75 5 25 11 56 6 80-9-24 31-74 39-97 6Z" fill="#38d51a"/>
+        <path d="M15 72c15 12 32 18 50 18 18 0 35-5 48-15" fill="none" stroke="#38d51a" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <span class="brandtext"><strong>KG-BUSINESS</strong><small>Energie. Einfach. Persönlich.</small></span>
     </a>
     <nav class="menu">
       <a href="#leistungen">Leistungen</a>
+      <a href="#gewerbe">Gewerbe</a>
       <a href="#ablauf">Ablauf</a>
       <a href="#branchen">Branchen</a>
       <a href="#faq">FAQ</a>
       <a href="#kontakt">Kontakt</a>
       <a class="cta" href="#energiecheck">Kostenlos vergleichen</a>
     </nav>
+    <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
   </div>
 </header>
+<nav class="mobileMenu" id="mobileMenu">
+  <a href="#leistungen">Leistungen</a><a href="#gewerbe">Gewerbe</a><a href="#ablauf">Ablauf</a><a href="#branchen">Branchen</a><a href="#faq">FAQ</a><a href="#kontakt">Kontakt</a><a class="cta" href="#energiecheck">Kostenlos vergleichen</a>
+</nav>
 
 <main>
 <section class="hero" id="start">
-  <div class="wrap heroGrid">
-    <div>
-      <div class="badge"><i></i> Strom & Gas für Unternehmen und Privathaushalte</div>
-      <h1>Weniger zahlen.<br><span class="grad">Besser entscheiden.</span></h1>
-      <p class="lead">KG-BUSINESS prüft Ihre aktuelle Energiesituation, vergleicht passende Strom- und Gastarife und begleitet Sie auf Wunsch beim Anbieterwechsel – kostenlos, transparent und persönlich.</p>
-      <div class="actions">
-        <a class="btn btnPrimary" href="#energiecheck">Jetzt kostenlosen Energie-Check starten →</a>
-        <a class="btn btnSoft" href="tel:+4920347966822">☎ 0203 47 96 68 22</a>
+  <div class="wrap">
+    <div class="heroContent">
+      <div class="eyebrow"><i class="dot"></i> Strom & Gas für Unternehmen und Privathaushalte</div>
+      <h1>Ihre Energie.<br>Unsere <span style="color:#64eb43">Aufgabe.</span></h1>
+      <p>KG-BUSINESS vergleicht Strom- und Gastarife, erklärt Konditionen verständlich und begleitet Sie persönlich bis zum gewünschten Anbieterwechsel.</p>
+      <div class="heroActions">
+        <a class="btn btnGreen" href="#energiecheck">Jetzt kostenlosen Energie-Check starten →</a>
+        <a class="btn btnGhost" href="tel:+4920347966822">☎ 0203 47 96 68 22</a>
       </div>
-      <div class="trustline">
-        <span><i class="ok">✓</i> Kostenlose Erstanalyse</span>
-        <span><i class="ok">✓</i> Kein Abschlusszwang</span>
-        <span><i class="ok">✓</i> Persönliche Betreuung</span>
-      </div>
-    </div>
-
-    <div class="visual">
-      <div class="photoHero">
-        <img src="assets/0A1E66FA-CE8E-444E-9DD2-E64C977A9344.png" alt="KG Business Energieberatung" loading="eager" fetchpriority="high">
-        <div class="photoShade"></div>
-        <div class="heroGlass">
-          <span class="heroGlassIcon">⚡</span>
-          <div><strong>Strom & Gas vergleichen</strong><small>Persönlich · transparent · unverbindlich</small></div>
-        </div>
-        <div style="display:none">
-        <svg class="energySvg" viewBox="0 0 620 430" role="img" aria-label="Illustration zu Strom, Gas und Energievergleich">
-          <defs>
-            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b7cff"/><stop offset="1" stop-color="#4fcfff"/></linearGradient>
-            <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#19c989"/><stop offset="1" stop-color="#7be5bd"/></linearGradient>
-            <filter id="sh"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#2e7ca8" flood-opacity=".15"/></filter>
-          </defs>
-          <rect x="18" y="22" width="584" height="380" rx="28" fill="#f7fcff"/>
-          <circle cx="505" cy="89" r="48" fill="#e9fbf4"/>
-          <path class="spark" d="M508 54 478 103h25l-5 33 42-59h-28l-4-23Z" fill="url(#g2)"/>
-          <rect x="58" y="70" width="255" height="246" rx="24" fill="white" filter="url(#sh)"/>
-          <text x="86" y="108" font-size="17" font-weight="800" fill="#193142">Tarif-Check</text>
-          <text x="86" y="140" font-size="12" fill="#6b7b87">Strom / Gewerbe</text>
-          <rect x="86" y="164" width="197" height="12" rx="6" fill="#e7eff4"/>
-          <rect x="86" y="164" width="137" height="12" rx="6" fill="url(#g1)"/>
-          <text x="86" y="205" font-size="12" fill="#6b7b87">Verbrauch</text>
-          <text x="86" y="235" font-size="26" font-weight="900" fill="#0b1b2b">12.000 kWh</text>
-          <rect x="86" y="258" width="111" height="34" rx="10" fill="#eafaf5"/>
-          <text x="105" y="280" font-size="12" font-weight="800" fill="#11875f">✓ geprüft</text>
-          <path d="M356 303 C404 230, 445 274, 493 174 C521 119, 549 144, 572 94" fill="none" stroke="url(#g1)" stroke-width="10" stroke-linecap="round"/>
-          <circle cx="356" cy="303" r="9" fill="#0b7cff"/><circle cx="493" cy="174" r="9" fill="#19c989"/><circle cx="572" cy="94" r="9" fill="#19c989"/>
-          <rect x="346" y="330" width="221" height="43" rx="13" fill="white" filter="url(#sh)"/>
-          <circle cx="372" cy="352" r="9" fill="#19c989"/>
-          <text x="392" y="357" font-size="13" font-weight="800" fill="#234154">Vergleich vorbereitet</text>
-        </svg>
-        </div>
-      </div>
-      <div class="float f1"><strong>60 Sek.</strong>für die Anfrage</div>
-      <div class="float f2"><strong>0 €</strong>Erstberatung</div>
+      <div class="trust"><span><i class="check">✓</i>Kostenlose Erstanalyse</span><span><i class="check">✓</i>Kein Abschlusszwang</span><span><i class="check">✓</i>Persönliche Betreuung</span></div>
     </div>
   </div>
 </section>
 
-<div class="stats">
-  <div class="wrap statsGrid">
-    <div class="stat"><b>Kostenlos</b><span>Erstberatung & Analyse</span></div>
-    <div class="stat"><b>Transparent</b><span>Tarife & Konditionen im Vergleich</span></div>
-    <div class="stat"><b>Persönlich</b><span>Direkter Ansprechpartner</span></div>
-    <div class="stat"><b>Unverbindlich</b><span>Sie entscheiden selbst</span></div>
+<div class="quickbar">
+  <div class="wrap quickgrid">
+    <div class="quick"><i>€</i><b>Kosten prüfen</b><small>Aktuelle Konditionen transparent einordnen.</small></div>
+    <div class="quick"><i>⇄</i><b>Anbieter vergleichen</b><small>Passende Tarife übersichtlich gegenüberstellen.</small></div>
+    <div class="quick"><i>✓</i><b>Wechsel begleiten</b><small>Wir unterstützen auf Wunsch beim gesamten Prozess.</small></div>
+    <div class="quick"><i>☎</i><b>Persönlich beraten</b><small>Direkter Ansprechpartner statt anonymer Hotline.</small></div>
   </div>
 </div>
 
 <section id="leistungen">
   <div class="wrap">
-    <div class="eyebrow">Leistungen</div>
-    <h2>Alles, was Sie für eine bessere Energieentscheidung brauchen.</h2>
-    <p class="sub">Von der Kostenanalyse bis zur Wechselbegleitung: Wir strukturieren den Prozess und machen komplexe Tarifdetails verständlich.</p>
+    <div class="sectionLabel">Leistungen</div>
+    <h2 class="sectionTitle">Energieberatung, die nicht komplizierter ist als nötig.</h2>
+    <p class="sectionSub">Klare Daten, verständliche Konditionen und ein Ansprechpartner, der den Prozess mit Ihnen durchgeht.</p>
     <div class="serviceGrid">
-      <article class="card"><div class="icon">⚡</div><h3>Energie- & Kostenanalyse</h3><p>Wir prüfen Ihre Strom- und Gasverträge, Ihren Verbrauch und die aktuellen Kosten.</p></article>
-      <article class="card"><div class="icon">⇄</div><h3>Tarif- & Anbieterwechsel</h3><p>Passende Angebote werden nach Preis, Laufzeit, Preisgarantie und weiteren Konditionen gegenübergestellt.</p></article>
-      <article class="card"><div class="icon">▦</div><h3>Geschäftskunden-Service</h3><p>Maßgeschneiderte Lösungen für Unternehmen, Praxen, Handel, Gastronomie und weitere Gewerbe.</p></article>
-      <article class="card"><div class="icon">⌂</div><h3>Privatkunden-Beratung</h3><p>Persönlicher Tarifcheck für Haushalte, die ihre laufenden Energiekosten prüfen möchten.</p></article>
-      <article class="card"><div class="icon">♻</div><h3>Nachhaltige Lösungen</h3><p>Wir berücksichtigen auf Wunsch auch nachhaltige Tarifoptionen und langfristige Energieeffizienz.</p></article>
-      <article class="card"><div class="icon">€</div><h3>Fördermittel-Information</h3><p>Orientierung zu passenden Förderprogrammen, sofern sie für Ihre Situation relevant sind.</p></article>
+      <article class="service"><div class="sicon">⚡</div><h3>Gewerbestrom</h3><p>Stromangebote für Unternehmen, Praxen, Büros, Handel, Gastronomie und weitere Gewerbe vergleichen.</p></article>
+      <article class="service"><div class="sicon">🔥</div><h3>Gewerbegas</h3><p>Gasverträge anhand von Verbrauch, Laufzeit, Preisstruktur und weiteren Konditionen prüfen.</p></article>
+      <article class="service"><div class="sicon">🏠</div><h3>Privatkunden</h3><p>Auch Privathaushalte können Strom und Gas unkompliziert prüfen lassen und passende Angebote erhalten.</p></article>
+      <article class="service"><div class="sicon">📄</div><h3>Rechnungs-Check</h3><p>Eine aktuelle Rechnung reicht häufig als Ausgangspunkt für die erste Analyse.</p></article>
+      <article class="service"><div class="sicon">🔎</div><h3>Tarifvergleich</h3><p>Arbeitspreis, Grundpreis, Vertragslaufzeit, Preisgarantie und weitere Details im direkten Vergleich.</p></article>
+      <article class="service"><div class="sicon">🤝</div><h3>Wechselservice</h3><p>Wenn Sie sich für ein Angebot entscheiden, begleiten wir die nächsten Schritte persönlich.</p></article>
     </div>
   </div>
 </section>
 
-<section id="ablauf" class="brands">
+<section class="band" id="gewerbe">
   <div class="wrap split">
+    <div class="imageCard">
+      <img src="assets/3FC93FAB-D3D5-43F3-B7F1-1AFD25A3E60A.png" alt="Energieberatung für Geschäftskunden" loading="lazy">
+      <div class="imageCaption"><b>Für Unternehmen gedacht.</b><span>Strukturiert vergleichen. Persönlich entscheiden.</span></div>
+    </div>
     <div>
-      <div class="eyebrow">So funktioniert's</div>
-      <h2>Einfach rein. Klar raus.</h2>
-      <p class="sub">Keine unnötige Bürokratie. Wir brauchen nur die wichtigsten Eckdaten und führen Sie strukturiert durch den Vergleich.</p>
-      <div class="steps">
-        <div class="stepRow"><div class="num">1</div><div><h4>Daten übermitteln</h4><p>PLZ, Jahresverbrauch, aktueller Anbieter und – wenn vorhanden – Vertragsende oder Rechnung.</p></div></div>
-        <div class="stepRow"><div class="num">2</div><div><h4>Vergleich erhalten</h4><p>Wir prüfen passende Möglichkeiten und erklären die Unterschiede verständlich.</p></div></div>
-        <div class="stepRow"><div class="num">3</div><div><h4>Selbst entscheiden</h4><p>Sie entscheiden, ob ein Wechsel für Sie sinnvoll ist. Kein Abschlusszwang.</p></div></div>
+      <div class="sectionLabel">Geschäftskunden</div>
+      <h2 class="sectionTitle">Energiekosten gehören auf den Prüfstand.</h2>
+      <p class="sectionSub">Gerade bei gewerblichem Verbrauch können Preisbestandteile, Vertragslaufzeiten und Wechselzeitpunkte relevant sein. Wir bringen Struktur in die Entscheidung.</p>
+      <div class="benefits">
+        <div class="benefit"><i>1</i><div><b>Verbrauch & Vertrag erfassen</b><p>Wir prüfen die wichtigsten Daten Ihrer aktuellen Versorgung.</p></div></div>
+        <div class="benefit"><i>2</i><div><b>Angebote nachvollziehbar vergleichen</b><p>Nicht nur der Arbeitspreis zählt – auch Grundpreis, Laufzeit und Preisgarantie.</p></div></div>
+        <div class="benefit"><i>3</i><div><b>Entscheidung selbst treffen</b><p>Sie erhalten eine klare Grundlage und entscheiden selbst, ob Sie wechseln möchten.</p></div></div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="formCard" id="energiecheck">
-      <div class="formHead"><h3>Ihr kostenloser Energie-Check</h3><span class="pill">ca. 60 Sek.</span></div>
-      <div class="progress"><i id="bar"></i></div>
-      <form id="leadForm">
-        <div class="formStep active" data-step="1">
-          <h4>Was möchten Sie prüfen?</h4><p>Wählen Sie die passende Option.</p>
-          <div class="choices" id="energyChoices">
-            <button type="button" class="choice" data-value="Strom">⚡ Strom</button>
-            <button type="button" class="choice" data-value="Gas">🔥 Gas</button>
-            <button type="button" class="choice" data-value="Strom & Gas">⚡🔥 Strom & Gas</button>
-            <button type="button" class="choice" data-value="Erstberatung">💬 Erstberatung</button>
-          </div>
-          <input type="hidden" id="energy">
-          <div class="formActions"><button type="button" class="btn btnPrimary" onclick="nextStep(1)">Weiter →</button></div>
-        </div>
-
-        <div class="formStep" data-step="2">
-          <h4>Ihre Eckdaten</h4><p>Damit wir die Anfrage passend einordnen können.</p>
-          <div class="grid2">
-            <div class="field"><label>Kundentyp</label><select id="customerType"><option>Unternehmen / Gewerbe</option><option>Privathaushalt</option></select></div>
-            <div class="field"><label>PLZ</label><input id="plz" inputmode="numeric" maxlength="5" placeholder="z. B. 47055"></div>
-          </div>
-          <div class="grid2">
-            <div class="field"><label>Jahresverbrauch</label><input id="consumption" placeholder="z. B. 12.000 kWh"></div>
-            <div class="field"><label>Aktueller Anbieter</label><input id="provider" placeholder="falls bekannt"></div>
-          </div>
-          <div class="formActions"><button type="button" class="btn btnSoft" onclick="prevStep(2)">Zurück</button><button type="button" class="btn btnPrimary" onclick="nextStep(2)">Weiter →</button></div>
-        </div>
-
-        <div class="formStep" data-step="3">
-          <h4>Wie erreichen wir Sie?</h4><p>Wir melden uns persönlich zu Ihrer Anfrage.</p>
-          <div class="field"><label>Firma / Name</label><input id="name" placeholder="Ihr Name oder Firmenname"></div>
-          <div class="grid2"><div class="field"><label>E-Mail</label><input id="email" type="email" placeholder="name@firma.de"></div><div class="field"><label>Telefon</label><input id="phone" type="tel" placeholder="+49 ..."></div></div>
-          <div class="field"><label>Vertragsende / Kündigungsfrist</label><input id="contract" placeholder="falls bekannt"></div>
-          <label style="display:flex;gap:9px;align-items:flex-start;font-size:12px;color:#657784;line-height:1.45;margin-top:10px"><input id="consent" type="checkbox" style="margin-top:3px"> Ich stimme zu, dass KG-BUSINESS mich zu meiner Anfrage kontaktieren darf.</label>
-          <div class="formActions"><button type="button" class="btn btnSoft" onclick="prevStep(3)">Zurück</button><button type="submit" class="btn btnPrimary">Anfrage senden ✓</button></div>
-          <p class="small">Auf dieser GitHub-Testseite öffnet der Button eine vorbereitete E-Mail. Beim späteren Einbau auf kg-business.de kann das Formular direkt an Ihr gewünschtes System angebunden werden.</p>
-        </div>
-        <div class="success" id="success"><div class="tick">✓</div><h4>Fast geschafft.</h4><p>Ihre E-Mail-App wird mit allen Angaben geöffnet. Dort nur noch „Senden“ tippen.</p></div>
-      </form>
+<section id="ablauf">
+  <div class="wrap">
+    <div class="sectionLabel">So funktioniert's</div>
+    <h2 class="sectionTitle">In vier Schritten zum passenden Angebot.</h2>
+    <p class="sectionSub">Von der ersten Anfrage bis zum gewünschten Wechsel bleiben die Schritte übersichtlich.</p>
+    <div class="process">
+      <div class="pstep"><div class="pnum">01</div><h3>Anfrage senden</h3><p>PLZ, Verbrauch und Kontakt reichen für den Start.</p></div>
+      <div class="pstep"><div class="pnum">02</div><h3>Daten prüfen</h3><p>Wir ordnen Ihre aktuelle Situation und Vertragsdaten ein.</p></div>
+      <div class="pstep"><div class="pnum">03</div><h3>Tarife vergleichen</h3><p>Passende Angebote werden verständlich gegenübergestellt.</p></div>
+      <div class="pstep"><div class="pnum">04</div><h3>Wechsel begleiten</h3><p>Bei Ihrer Entscheidung unterstützen wir die weiteren Schritte.</p></div>
     </div>
   </div>
 </section>
 
-
-<section id="kundenwelten">
-  <div class="wrap">
-    <div class="eyebrow">Persönlich für jede Situation</div>
-    <h2>Zwei Welten. Ein Ziel: bessere Energiekosten.</h2>
-    <p class="sub">Ob Gewerbe oder Zuhause – wir machen aus Tarifdaten eine klare Entscheidung.</p>
-    <div class="showcaseGrid">
-      <article class="showcaseCard reveal">
-        <img src="assets/3FC93FAB-D3D5-43F3-B7F1-1AFD25A3E60A.png" alt="Energieberatung für Gewerbekunden" loading="lazy">
-        <div class="showcaseOverlay"></div>
-        <div class="showcaseContent"><span>Für Unternehmen</span><h3>Geschäftskosten intelligent prüfen.</h3><p>Von Büro und Praxis bis Gastronomie und Handel: strukturierter Vergleich mit persönlicher Begleitung.</p></div>
-      </article>
-      <article class="showcaseCard reveal">
-        <img src="assets/5485F7DC-B028-4F6F-9135-71D7D3A639B8.png" alt="Energieberatung für Privathaushalte" loading="lazy">
-        <div class="showcaseOverlay"></div>
-        <div class="showcaseContent"><span>Für Privathaushalte</span><h3>Mehr Überblick für Ihr Zuhause.</h3><p>Strom und Gas unkompliziert prüfen – mit einer Beratung, die verständlich bleibt.</p></div>
-      </article>
+<section class="compare" id="energiecheck">
+  <div class="wrap formWrap">
+    <div>
+      <div class="sectionLabel" style="color:#7ec9ff">Kostenloser Energie-Check</div>
+      <h2 class="sectionTitle">60 Sekunden für Ihre Anfrage.</h2>
+      <p class="sectionSub">Sie schicken uns die Eckdaten. Wir melden uns persönlich und besprechen die nächsten Schritte.</p>
+      <div class="trust" style="margin-top:28px"><span><i class="check">✓</i>Kostenlos</span><span><i class="check">✓</i>Unverbindlich</span><span><i class="check">✓</i>Persönlich</span></div>
     </div>
+    <form class="formCard" id="leadForm">
+      <div class="formGrid">
+        <div class="field"><label>Kundentyp</label><select id="customerType"><option>Unternehmen / Gewerbe</option><option>Privathaushalt</option></select></div>
+        <div class="field"><label>Energie</label><select id="energy"><option>Strom</option><option>Gas</option><option>Strom & Gas</option></select></div>
+        <div class="field"><label>PLZ</label><input id="plz" maxlength="5" inputmode="numeric" placeholder="z. B. 47055"></div>
+        <div class="field"><label>Jahresverbrauch</label><input id="consumption" placeholder="z. B. 12.000 kWh"></div>
+        <div class="field"><label>Aktueller Anbieter</label><input id="provider" placeholder="falls bekannt"></div>
+        <div class="field"><label>Vertragsende</label><input id="contract" placeholder="falls bekannt"></div>
+        <div class="field full"><label>Firma / Name</label><input id="name" placeholder="Ihr Name oder Firmenname"></div>
+        <div class="field"><label>E-Mail</label><input id="email" type="email" placeholder="name@firma.de"></div>
+        <div class="field"><label>Telefon</label><input id="phone" type="tel" placeholder="+49 ..."></div>
+        <div class="field full"><label style="display:flex;gap:9px;align-items:flex-start;font-weight:600"><input id="consent" type="checkbox" style="width:auto;margin-top:3px">Ich stimme zu, dass KG-BUSINESS mich zu meiner Anfrage kontaktieren darf.</label></div>
+        <div class="full"><button class="btn btnGreen" type="submit" style="width:100%">Kostenlose Anfrage senden →</button></div>
+      </div>
+      <div class="formNote">Ihre Angaben werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.</div>
+    </form>
   </div>
 </section>
 
 <section id="branchen">
   <div class="wrap">
-    <div class="eyebrow">Branchen</div>
-    <h2>Für Gewerbe genauso wie für Privathaushalte.</h2>
-    <p class="sub">Besonders bei gewerblichem Verbrauch können Vertragsdetails und Tarifstruktur einen spürbaren Unterschied machen.</p>
-    <div class="sectors">
-      <div class="sector">🏢 Büro</div><div class="sector">🩺 Praxis</div><div class="sector">🍽 Gastronomie</div><div class="sector">🛠 Handwerk</div><div class="sector">🛍 Handel</div><div class="sector">🏠 Privat</div>
+    <div class="sectionLabel">Branchen</div>
+    <h2 class="sectionTitle">Für viele Gewerbearten geeignet.</h2>
+    <p class="sectionSub">Ob kleines Büro oder energieintensiver Betrieb – Ausgangspunkt ist immer Ihr tatsächlicher Bedarf.</p>
+    <div class="branches">
+      <div class="branch"><span>🏢</span>Büro</div><div class="branch"><span>🩺</span>Praxis</div><div class="branch"><span>🍽</span>Gastronomie</div><div class="branch"><span>🛠</span>Handwerk</div><div class="branch"><span>🛍</span>Handel</div><div class="branch"><span>🏠</span>Privat</div>
+    </div>
+    <div class="gallery">
+      <div class="galleryMain"><img src="assets/80925255-B79C-490E-A7AA-0F89FEAFE623.png" alt="KG-BUSINESS Energie und Gewerbe" loading="lazy"><div class="galleryOverlay"></div></div>
+      <div class="gallerySmallGrid">
+        <div class="gallerySmall"><img src="assets/9E7879B6-1DCC-4FBB-8AA1-7775B1D6D6D4.png" alt="Energieberatung" loading="lazy"><div class="galleryOverlay"></div></div>
+        <div class="gallerySmall"><img src="assets/D63F300B-D827-4290-A554-5AA10F44BC7D.png" alt="Strom und Gas" loading="lazy"><div class="galleryOverlay"></div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="wrap quote">
-    <div><h2>Ihre letzte Rechnung reicht für den Start.</h2><p>Schicken Sie uns Ihre Daten oder starten Sie den 60-Sekunden-Check. Wir prüfen die Ausgangslage und melden uns mit den nächsten Schritten.</p></div>
-    <a class="btn" href="#energiecheck">Kostenlos anfragen →</a>
-  </div>
-</section>
-
-<section id="faq">
+<section class="band" id="faq">
   <div class="wrap">
-    <div class="eyebrow">FAQ</div>
-    <h2>Häufige Fragen.</h2>
+    <div class="sectionLabel">FAQ</div>
+    <h2 class="sectionTitle">Häufige Fragen.</h2>
     <div class="faq">
-      <details><summary>Kostet die Erstberatung etwas?</summary><p>Nein. Die Erstberatung und Analyse Ihrer Vertragsdaten sind kostenlos und unverbindlich.</p></details>
-      <details><summary>Ist KG-BUSINESS ein Energieversorger?</summary><p>Nein. KG-BUSINESS vermittelt Energieverträge und unterstützt Kunden beim Vergleich und beim Vertragsabschluss mit dem jeweiligen Energieanbieter.</p></details>
-      <details><summary>Welche Angaben braucht KG-BUSINESS?</summary><p>Ideal sind PLZ, Jahresverbrauch, aktueller Anbieter sowie – wenn bekannt – Vertragsende oder Kündigungsfrist. Eine aktuelle Rechnung erleichtert die Prüfung.</p></details>
-      <details><summary>Muss ich nach dem Vergleich wechseln?</summary><p>Nein. Sie erhalten die Informationen und entscheiden selbst, ob ein Wechsel für Sie sinnvoll ist.</p></details>
+      <details><summary>Kostet die Erstberatung etwas?</summary><p>Nein. Die erste Analyse und Beratung ist kostenlos und unverbindlich.</p></details>
+      <details><summary>Ist KG-BUSINESS selbst Energieversorger?</summary><p>Nein. KG-BUSINESS unterstützt beim Vergleich und vermittelt Energieverträge mit dem jeweiligen Anbieter.</p></details>
+      <details><summary>Welche Angaben werden für einen Vergleich benötigt?</summary><p>Ideal sind Postleitzahl, Jahresverbrauch, aktueller Anbieter sowie – wenn vorhanden – Vertragsende oder eine aktuelle Rechnung.</p></details>
+      <details><summary>Muss ich nach einem Vergleich wechseln?</summary><p>Nein. Sie entscheiden selbst, ob Sie ein Angebot annehmen möchten.</p></details>
+      <details><summary>Kann ich auch als Privatkunde anfragen?</summary><p>Ja. KG-BUSINESS unterstützt sowohl Geschäftskunden als auch Privathaushalte.</p></details>
     </div>
+  </div>
+</section>
+
+<section class="contactBar" id="kontakt">
+  <div class="wrap contactGrid">
+    <div>
+      <div class="sectionLabel">Kontakt</div>
+      <h2 class="sectionTitle">Direkt mit KG-BUSINESS sprechen.</h2>
+      <p class="sectionSub">Sie möchten lieber telefonisch oder per E-Mail starten? Melden Sie sich direkt bei uns.</p>
+      <div class="contactBox"><a class="contactPill" href="tel:+4920347966822">☎ 0203 47 96 68 22</a><a class="contactPill" href="mailto:info@kg-business.de">✉ info@kg-business.de</a></div>
+    </div>
+    <div class="imageCard" style="min-height:360px"><img src="assets/5485F7DC-B028-4F6F-9135-71D7D3A639B8.png" alt="KG-BUSINESS Kontakt und Beratung" loading="lazy"><div class="imageCaption"><b>Persönlich erreichbar.</b><span>Duisburg · NRW · bundesweite Anfrage möglich</span></div></div>
   </div>
 </section>
 </main>
 
-<footer id="kontakt">
+<footer>
   <div class="wrap">
     <div class="foot">
       <div>
-        <a class="brand" href="#start"><span class="logo"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 5 13h6l-1 9 9-13h-6V2Z" fill="white"/></svg></span><span>KG-BUSINESS</span></a>
-        <p>Energieberatung & Services<br>Fliederstr. 59<br>47055 Duisburg</p>
+        <a class="brand" href="#start">
+          <svg class="brandmark" viewBox="0 0 120 100" aria-hidden="true"><path d="M19 20h20v47H19zM43 11h20v56H43zM67 4h20v63H67z" fill="#fff"/><path d="M13 69c20 23 64 23 92-2-25 12-55 15-75 5 25 11 56 6 80-9-24 31-74 39-97 6Z" fill="#38d51a"/></svg>
+          <span class="brandtext"><strong style="color:#fff">KG-BUSINESS</strong><small style="color:#93a5c3">Energie. Einfach. Persönlich.</small></span>
+        </a>
+        <p>Persönliche Energieberatung für Strom und Gas.</p>
       </div>
-      <div><h4>Kontakt</h4><p><a href="tel:+4920347966822">+49 203 47 96 68 22</a><br><a href="mailto:info@kg-business.de">info@kg-business.de</a><br><a href="https://www.kg-business.de">www.kg-business.de</a></p></div>
+      <div><h4>Leistungen</h4><p><a href="#leistungen">Stromvergleich</a><br><a href="#leistungen">Gasvergleich</a><br><a href="#gewerbe">Gewerbekunden</a><br><a href="#energiecheck">Energie-Check</a></p></div>
+      <div><h4>Kontakt</h4><p>Fliederstr. 59<br>47055 Duisburg<br><a href="tel:+4920347966822">+49 203 47 96 68 22</a><br><a href="mailto:info@kg-business.de">info@kg-business.de</a></p></div>
       <div><h4>Rechtliches</h4><p><a href="impressum.html">Impressum</a><br><a href="datenschutz.html">Datenschutz</a><br><a href="agb.html">AGB</a></p></div>
     </div>
     <div class="copy">© 2026 KG-BUSINESS · Alle Rechte vorbehalten.</div>
@@ -339,21 +230,18 @@ footer{background:#f3f8fb;border-top:1px solid #dde8ee;padding:44px 0 24px}.foot
 </footer>
 
 <script>
-const steps=[...document.querySelectorAll('.formStep')],bar=document.getElementById('bar'),energy=document.getElementById('energy');
-document.querySelectorAll('.choice').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.choice').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');energy.value=b.dataset.value}));
-function showStep(n){steps.forEach(s=>s.classList.toggle('active',Number(s.dataset.step)===n));bar.style.width=(n/3*100)+'%'}
-function nextStep(n){if(n===1&&!energy.value){alert('Bitte wählen Sie eine Option aus.');return}if(n===2&&!document.getElementById('plz').value.trim()){alert('Bitte geben Sie Ihre Postleitzahl ein.');return}showStep(n+1)}
-function prevStep(n){showStep(n-1)}
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const burger=document.getElementById('burger'),mobileMenu=document.getElementById('mobileMenu');
+burger.addEventListener('click',()=>mobileMenu.classList.toggle('open'));
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobileMenu.classList.remove('open')));
 document.getElementById('leadForm').addEventListener('submit',e=>{
  e.preventDefault();
  const name=document.getElementById('name').value.trim(),email=document.getElementById('email').value.trim(),phone=document.getElementById('phone').value.trim();
+ if(!document.getElementById('plz').value.trim()){alert('Bitte geben Sie Ihre Postleitzahl ein.');return}
  if(!name||(!email&&!phone)){alert('Bitte geben Sie Ihren Namen und mindestens E-Mail oder Telefon an.');return}
  if(!document.getElementById('consent').checked){alert('Bitte bestätigen Sie die Kontaktaufnahme.');return}
  const subject='Neue Energie-Anfrage über KG-BUSINESS';
- const lines=['Neue Anfrage über die KG-BUSINESS Website','','Energie: '+energy.value,'Kundentyp: '+document.getElementById('customerType').value,'PLZ: '+document.getElementById('plz').value,'Jahresverbrauch: '+document.getElementById('consumption').value,'Aktueller Anbieter: '+document.getElementById('provider').value,'Vertragsende / Kündigungsfrist: '+document.getElementById('contract').value,'','Name / Firma: '+name,'E-Mail: '+email,'Telefon: '+phone];
- document.querySelectorAll('.formStep').forEach(s=>s.classList.remove('active'));document.getElementById('success').style.display='block';bar.style.width='100%';
- setTimeout(()=>location.href='mailto:info@kg-business.de?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\n')),350);
+ const lines=['Neue Anfrage über die KG-BUSINESS Website','','Kundentyp: '+document.getElementById('customerType').value,'Energie: '+document.getElementById('energy').value,'PLZ: '+document.getElementById('plz').value,'Jahresverbrauch: '+document.getElementById('consumption').value,'Aktueller Anbieter: '+document.getElementById('provider').value,'Vertragsende: '+document.getElementById('contract').value,'','Name / Firma: '+name,'E-Mail: '+email,'Telefon: '+phone];
+ location.href='mailto:info@kg-business.de?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\n'));
 });
 </script>
 </body>
