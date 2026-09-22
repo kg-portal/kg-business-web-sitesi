@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="t d">
+<title id="t">KG Business Premium Energieberatung</title>
+<desc id="d">Modernes beleuchtetes Bürogebäude mit KG-Business Stele in Blau und Grün.</desc>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#9fd4ff"/><stop offset=".52" stop-color="#e8f5ff"/><stop offset="1" stop-color="#fff3df"/></linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b2d4a"/><stop offset=".52" stop-color="#145c8e"/><stop offset="1" stop-color="#09223a"/></linearGradient>
+  <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#119cff"/><stop offset=".55" stop-color="#1677ff"/><stop offset="1" stop-color="#12c98a"/></linearGradient>
+  <linearGradient id="walk" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#eef5f8"/><stop offset="1" stop-color="#cfd9df"/></linearGradient>
+  <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#001f3c" flood-opacity=".24"/></filter>
+  <filter id="glow"><feGaussianBlur stdDeviation="18"/></filter>
+</defs>
+
+<rect width="1200" height="900" fill="url(#sky)"/>
+<circle cx="103" cy="120" r="76" fill="#fff" opacity=".55"/>
+<circle cx="104" cy="121" r="115" fill="#fff" opacity=".16"/>
+
+<!-- distant city -->
+<g opacity=".25" fill="#5f7e96">
+  <rect x="0" y="430" width="110" height="160"/><rect x="120" y="390" width="140" height="200"/>
+  <rect x="270" y="440" width="115" height="150"/><rect x="398" y="410" width="160" height="180"/>
+</g>
+
+<!-- main building -->
+<polygon points="455,225 1200,55 1200,650 455,650" fill="#10273a"/>
+<polygon points="500,255 1160,112 1160,595 500,595" fill="url(#glass)"/>
+<g stroke="#74c7ff" stroke-opacity=".55" stroke-width="5">
+  <line x1="612" y1="230" x2="612" y2="620"/><line x1="742" y1="202" x2="742" y2="610"/>
+  <line x1="874" y1="173" x2="874" y2="605"/><line x1="1004" y1="145" x2="1004" y2="600"/>
+  <line x1="500" y1="390" x2="1160" y2="260"/><line x1="500" y1="515" x2="1160" y2="392"/>
+</g>
+
+<!-- warm interior -->
+<g opacity=".95">
+  <rect x="528" y="426" width="93" height="145" fill="#ffd99a"/><rect x="655" y="401" width="96" height="155" fill="#ffe6b8"/>
+  <rect x="786" y="375" width="98" height="160" fill="#ffdfa6"/><rect x="917" y="349" width="94" height="160" fill="#ffe8bd"/>
+  <rect x="1046" y="325" width="85" height="163" fill="#ffdda2"/>
+</g>
+
+<!-- desks / silhouettes -->
+<g fill="#173046" opacity=".72">
+  <rect x="548" y="520" width="55" height="10" rx="4"/><rect x="565" y="530" width="7" height="34"/>
+  <rect x="679" y="500" width="56" height="10" rx="4"/><rect x="696" y="510" width="7" height="36"/>
+  <rect x="810" y="478" width="56" height="10" rx="4"/><rect x="827" y="488" width="7" height="35"/>
+  <rect x="940" y="450" width="56" height="10" rx="4"/><rect x="957" y="460" width="7" height="35"/>
+</g>
+
+<!-- foreground paving -->
+<polygon points="0,610 1200,570 1200,900 0,900" fill="url(#walk)"/>
+<g stroke="#b7c7d1" stroke-width="2" opacity=".65">
+  <line x1="0" y1="690" x2="1200" y2="655"/><line x1="0" y1="775" x2="1200" y2="748"/>
+  <line x1="120" y1="610" x2="180" y2="900"/><line x1="360" y1="600" x2="420" y2="900"/>
+  <line x1="680" y1="590" x2="700" y2="900"/><line x1="980" y1="580" x2="960" y2="900"/>
+</g>
+
+<!-- landscaping -->
+<g filter="url(#shadow)">
+  <ellipse cx="815" cy="655" rx="150" ry="55" fill="#174d34"/>
+  <ellipse cx="1090" cy="700" rx="130" ry="60" fill="#1e6041"/>
+  <ellipse cx="205" cy="700" rx="165" ry="58" fill="#1c5b3b"/>
+</g>
+<g fill="#38a86b">
+  <circle cx="120" cy="670" r="44"/><circle cx="190" cy="652" r="57"/><circle cx="265" cy="680" r="43"/>
+  <circle cx="755" cy="630" r="45"/><circle cx="835" cy="625" r="58"/><circle cx="930" cy="655" r="42"/>
+  <circle cx="1040" cy="665" r="50"/><circle cx="1130" cy="675" r="60"/>
+</g>
+
+<!-- lights -->
+<g>
+  <g transform="translate(360 653)"><rect width="18" height="115" rx="8" fill="#173142"/><rect x="-6" y="-7" width="30" height="24" rx="7" fill="#fff0b8"/><circle cx="9" cy="5" r="32" fill="#ffeab0" opacity=".25" filter="url(#glow)"/></g>
+  <g transform="translate(685 640)"><rect width="18" height="125" rx="8" fill="#173142"/><rect x="-6" y="-7" width="30" height="24" rx="7" fill="#fff0b8"/></g>
+  <g transform="translate(1060 660)"><rect width="18" height="115" rx="8" fill="#173142"/><rect x="-6" y="-7" width="30" height="24" rx="7" fill="#fff0b8"/></g>
+</g>
+
+<!-- branded monument -->
+<g transform="translate(770 350)" filter="url(#shadow)">
+  <rect x="0" y="0" width="250" height="420" rx="24" fill="#071a2d"/>
+  <rect x="34" y="34" width="82" height="82" rx="22" fill="url(#brand)"/>
+  <path d="M80 48 L58 84 H76 L66 110 L98 72 H80 Z" fill="#fff"/>
+  <text x="34" y="163" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="800" fill="#fff">KG-BUSINESS</text>
+  <rect x="34" y="190" width="178" height="5" rx="3" fill="url(#brand)"/>
+  <text x="34" y="254" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#fff">WENIGER KOSTEN.</text>
+  <text x="34" y="291" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#fff">MEHR POTENZIAL.</text>
+  <text x="34" y="342" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#bad1e3">STROM · GAS · BERATUNG</text>
+</g>
+
+<!-- subtle energy accent -->
+<path d="M85 548 C210 495, 285 520, 410 468" fill="none" stroke="#20a6ff" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+<path d="M100 570 C230 520, 300 545, 430 492" fill="none" stroke="#1ed39b" stroke-width="5" stroke-linecap="round" opacity=".65"/>
+</svg>
