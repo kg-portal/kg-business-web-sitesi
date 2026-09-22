@@ -91,8 +91,25 @@ h2{font-size:clamp(34px,4.5vw,52px);line-height:1.04;letter-spacing:-1.6px;margi
 .faq{display:grid;gap:11px;margin-top:30px}details{border:1px solid #e1ebf1;border-radius:17px;padding:18px 20px;background:#fff}summary{cursor:pointer;font-weight:900}details p{color:#677986;line-height:1.65;margin:12px 0 0}
 footer{background:#f3f8fb;border-top:1px solid #dde8ee;padding:44px 0 24px}.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:30px}.foot h4{margin:0 0 12px}.foot p,.foot a{font-size:14px;line-height:1.85;color:#5e7180}.foot a:hover{color:var(--blue)}.copy{border-top:1px solid #dce7ed;margin-top:28px;padding-top:18px;font-size:12px;color:#7a8994}
 .success{display:none;text-align:center;padding:18px 0}.success .tick{width:58px;height:58px;border-radius:50%;background:#e7fbf3;color:#129f70;display:grid;place-items:center;margin:auto;font-size:28px;font-weight:900}
+
+.photoHero{position:relative;border-radius:32px;overflow:hidden;box-shadow:0 30px 90px rgba(11,124,255,.20);border:1px solid #dcebf4;min-height:510px;background:#eef8ff}
+.photoHero img{width:100%;height:100%;min-height:510px;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.photoHero:hover img{transform:scale(1.025)}
+.photoShade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(4,28,47,.35) 100%);pointer-events:none}
+.heroGlass{position:absolute;left:22px;right:22px;bottom:20px;padding:16px 18px;border-radius:18px;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);display:flex;gap:12px;align-items:center;box-shadow:0 12px 35px rgba(0,0,0,.10)}
+.heroGlassIcon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--green));color:#fff;font-size:20px}
+.heroGlass strong{display:block;font-size:15px}.heroGlass small{display:block;color:#617482;margin-top:3px}
+.showcaseGrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:34px}
+.showcaseCard{position:relative;min-height:440px;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);background:#eaf6fb}
+.showcaseCard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.showcaseCard:hover img{transform:scale(1.035)}
+.showcaseOverlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,25,40,.02) 35%,rgba(7,25,40,.72) 100%)}
+.showcaseContent{position:absolute;left:24px;right:24px;bottom:24px;color:#fff}
+.showcaseContent span{display:inline-block;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.18);backdrop-filter:blur(10px);font-size:12px;font-weight:800;margin-bottom:10px}
+.showcaseContent h3{font-size:28px;line-height:1.05;margin:0 0 8px}.showcaseContent p{margin:0;color:#e6f3fa;line-height:1.55;max-width:500px}
+.reveal{opacity:0;transform:translateY(20px);transition:.65s ease}.reveal.visible{opacity:1;transform:none}
 @media(max-width:930px){.menu a:not(.cta){display:none}.heroGrid,.split{grid-template-columns:1fr}.visual{max-width:650px;margin:auto}.statsGrid,.serviceGrid{grid-template-columns:1fr 1fr}.sectors{grid-template-columns:repeat(3,1fr)}.foot{grid-template-columns:1fr 1fr}}
-@media(max-width:620px){.wrap{width:min(100% - 24px,1180px)}.navin{height:68px}.menu .cta{font-size:12px;padding:10px 12px}.heroGrid{padding:44px 0 70px;gap:34px}h1{font-size:45px}.lead{font-size:17px}.f1,.f2{position:static;margin-top:10px}.visual{display:grid}.stats{margin-top:-20px}.statsGrid,.serviceGrid{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid #edf3f7}.sectors{grid-template-columns:1fr 1fr}.choices,.grid2{grid-template-columns:1fr}.quote{padding:30px 24px;display:block}.quote .btn{margin-top:20px}.foot{grid-template-columns:1fr}section{padding:68px 0}}
+@media(max-width:620px){.showcaseGrid{grid-template-columns:1fr}.showcaseCard{min-height:390px}.photoHero,.photoHero img{min-height:410px}.wrap{width:min(100% - 24px,1180px)}.navin{height:68px}.menu .cta{font-size:12px;padding:10px 12px}.heroGrid{padding:44px 0 70px;gap:34px}h1{font-size:45px}.lead{font-size:17px}.f1,.f2{position:static;margin-top:10px}.visual{display:grid}.stats{margin-top:-20px}.statsGrid,.serviceGrid{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid #edf3f7}.sectors{grid-template-columns:1fr 1fr}.choices,.grid2{grid-template-columns:1fr}.quote{padding:30px 24px;display:block}.quote .btn{margin-top:20px}.foot{grid-template-columns:1fr}section{padding:68px 0}}
 </style>
 </head>
 <body>
@@ -132,8 +149,14 @@ footer{background:#f3f8fb;border-top:1px solid #dde8ee;padding:44px 0 24px}.foot
     </div>
 
     <div class="visual">
-      <div class="energyCard">
-        <div class="energyTop"><b>Ihr Energie-Überblick</b><span class="pill">live vorbereitet</span></div>
+      <div class="photoHero">
+        <img src="assets/hero-energy.jpg" alt="Persönliche Energieberatung für Strom und Gas">
+        <div class="photoShade"></div>
+        <div class="heroGlass">
+          <span class="heroGlassIcon">⚡</span>
+          <div><strong>Strom & Gas vergleichen</strong><small>Persönlich · transparent · unverbindlich</small></div>
+        </div>
+        <div style="display:none">
         <svg class="energySvg" viewBox="0 0 620 430" role="img" aria-label="Illustration zu Strom, Gas und Energievergleich">
           <defs>
             <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b7cff"/><stop offset="1" stop-color="#4fcfff"/></linearGradient>
@@ -158,6 +181,7 @@ footer{background:#f3f8fb;border-top:1px solid #dde8ee;padding:44px 0 24px}.foot
           <circle cx="372" cy="352" r="9" fill="#19c989"/>
           <text x="392" y="357" font-size="13" font-weight="800" fill="#234154">Vergleich vorbereitet</text>
         </svg>
+        </div>
       </div>
       <div class="float f1"><strong>60 Sek.</strong>für die Anfrage</div>
       <div class="float f2"><strong>0 €</strong>Erstberatung</div>
@@ -247,6 +271,27 @@ footer{background:#f3f8fb;border-top:1px solid #dde8ee;padding:44px 0 24px}.foot
   </div>
 </section>
 
+
+<section id="kundenwelten">
+  <div class="wrap">
+    <div class="eyebrow">Persönlich für jede Situation</div>
+    <h2>Zwei Welten. Ein Ziel: bessere Energiekosten.</h2>
+    <p class="sub">Ob Gewerbe oder Zuhause – wir machen aus Tarifdaten eine klare Entscheidung.</p>
+    <div class="showcaseGrid">
+      <article class="showcaseCard reveal">
+        <img src="assets/business-energy.jpg" alt="Energieberatung für Gewerbekunden">
+        <div class="showcaseOverlay"></div>
+        <div class="showcaseContent"><span>Für Unternehmen</span><h3>Geschäftskosten intelligent prüfen.</h3><p>Von Büro und Praxis bis Gastronomie und Handel: strukturierter Vergleich mit persönlicher Begleitung.</p></div>
+      </article>
+      <article class="showcaseCard reveal">
+        <img src="assets/private-energy.jpg" alt="Energieberatung für Privathaushalte">
+        <div class="showcaseOverlay"></div>
+        <div class="showcaseContent"><span>Für Privathaushalte</span><h3>Mehr Überblick für Ihr Zuhause.</h3><p>Strom und Gas unkompliziert prüfen – mit einer Beratung, die verständlich bleibt.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section id="branchen">
   <div class="wrap">
     <div class="eyebrow">Branchen</div>
@@ -299,6 +344,7 @@ document.querySelectorAll('.choice').forEach(b=>b.addEventListener('click',()=>{
 function showStep(n){steps.forEach(s=>s.classList.toggle('active',Number(s.dataset.step)===n));bar.style.width=(n/3*100)+'%'}
 function nextStep(n){if(n===1&&!energy.value){alert('Bitte wählen Sie eine Option aus.');return}if(n===2&&!document.getElementById('plz').value.trim()){alert('Bitte geben Sie Ihre Postleitzahl ein.');return}showStep(n+1)}
 function prevStep(n){showStep(n-1)}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 document.getElementById('leadForm').addEventListener('submit',e=>{
  e.preventDefault();
  const name=document.getElementById('name').value.trim(),email=document.getElementById('email').value.trim(),phone=document.getElementById('phone').value.trim();
