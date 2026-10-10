@@ -1,0 +1,28 @@
+# Abhängigkeiten
+node_modules/
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Laufzeitdaten (Leads, Uploads, Datenbank) – niemals committen
+data/
+*.sqlite
+*.sqlite3
+*.db
+
+# Umgebungsvariablen / Geheimnisse
+.env
+.env.*
+!.env.example
+
+# Tests
+playwright-report/
+test-results/
+coverage/
+
+# System
+.DS_Store
+*.log
