@@ -99,7 +99,7 @@ export default function HomePage() {
       {/* HERO */}
       <section className="on-dark relative isolate overflow-hidden bg-navy-900 text-white" aria-labelledby="hero-title">
         <EnergyBackdrop variant="home" />
-        <div className="container-page relative grid items-center gap-12 pb-28 pt-28 sm:pt-36 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16 lg:pb-40 lg:pt-44">
+        <div className="container-page relative grid items-center gap-12 pb-28 pt-28 sm:pt-36 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-14 xl:gap-16 lg:pb-40 lg:pt-44">
           <div className="animate-fade-up">
             <p className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.06] px-3.5 py-1.5 text-[0.8rem] font-semibold text-on-dark backdrop-blur">
               <span className="relative flex size-2">
@@ -118,7 +118,7 @@ export default function HomePage() {
               {company.brandName} prüft Ihre Strom- und Gasverträge, holt passende Angebote verschiedener Versorger ein und
               begleitet Sie bis zum Anbieterwechsel – für Gewerbe und Privathaushalte.
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <ButtonLink href="/energie-check" size="lg" icon="arrow">
                 Jetzt kostenlosen Energie-Check starten
               </ButtonLink>

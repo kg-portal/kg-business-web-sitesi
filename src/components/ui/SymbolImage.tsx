@@ -24,7 +24,7 @@ export function SymbolImage({
     <div className={cn("relative overflow-hidden", className)}>
       <Image src={src} alt={alt} fill sizes={sizes} priority={priority} className="object-cover" />
       {symbol ? (
-        <span className="absolute bottom-3 right-3 rounded-md bg-navy-950/70 px-2 py-0.5 text-[0.68rem] font-medium tracking-wide text-white/90 backdrop-blur">
+        <span className="absolute right-3 top-3 rounded-md bg-navy-950/70 px-2 py-0.5 text-[0.68rem] font-medium tracking-wide text-white/90 backdrop-blur">
           Symbolbild
         </span>
       ) : null}

@@ -116,6 +116,8 @@ export function EnergyBackdrop({ variant = "home", className }: { variant?: "hom
         </g>
         <rect x="0" y="560" width="1440" height="240" fill="url(#kg-fade)" />
       </svg>
+      {/* Lesbarkeit: Textseite links abdunkeln */}
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgb(8_26_64/0.82)_0%,rgb(8_26_64/0.55)_38%,rgb(8_26_64/0)_70%)] max-lg:bg-[linear-gradient(180deg,rgb(8_26_64/0.55)_0%,rgb(8_26_64/0.35)_100%)]" />
     </div>
   );
 }

@@ -98,7 +98,7 @@ export function SiteHeader() {
         </Link>
 
         <nav aria-label="Hauptnavigation" className="hidden lg:block" ref={navRef}>
-          <ul className="flex items-center gap-1">
+          <ul className="flex items-center gap-0.5 xl:gap-1">
             {mainNavigation.map((item) => {
               if (!isNavGroup(item)) {
                 const active = isActive(pathname, item.href);
@@ -108,7 +108,7 @@ export function SiteHeader() {
                       href={item.href}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "relative rounded-lg px-3 py-2 text-[0.92rem] font-semibold transition-colors",
+                        "relative whitespace-nowrap rounded-lg px-2.5 py-2 text-[0.92rem] font-semibold transition-colors xl:px-3",
                         solid ? "text-navy-900 hover:bg-soft" : "text-white/90 hover:bg-white/10 hover:text-white",
                         active && (solid ? "text-electric-600" : "text-white"),
                       )}
@@ -140,7 +140,7 @@ export function SiteHeader() {
                     aria-controls={`nav-panel-${item.label}`}
                     onClick={() => setOpenGroup(open ? null : item.label)}
                     className={cn(
-                      "relative inline-flex items-center gap-1 rounded-lg px-3 py-2 text-[0.92rem] font-semibold transition-colors",
+                      "relative inline-flex items-center gap-1 whitespace-nowrap rounded-lg px-2.5 py-2 text-[0.92rem] font-semibold transition-colors xl:px-3",
                       solid ? "text-navy-900 hover:bg-soft" : "text-white/90 hover:bg-white/10 hover:text-white",
                       open && (solid ? "bg-soft" : "bg-white/10 text-white"),
                     )}
@@ -210,13 +210,14 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <a
             href={company.phone.href}
+            aria-label={`Anrufen: ${company.phone.display}`}
             className={cn(
-              "hidden items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold transition-colors xl:inline-flex",
+              "hidden items-center gap-2 whitespace-nowrap rounded-lg px-2.5 py-2 text-sm font-semibold transition-colors xl:inline-flex",
               solid ? "text-navy-900 hover:bg-soft" : "text-white/90 hover:bg-white/10",
             )}
           >
             <Icon name="phone" className="size-4" />
-            {company.phone.display}
+            <span className="hidden 2xl:inline">{company.phone.display}</span>
           </a>
           <ButtonLink href="/energie-check" size="sm" icon="arrow" className="hidden sm:inline-flex">
             Energie-Check
