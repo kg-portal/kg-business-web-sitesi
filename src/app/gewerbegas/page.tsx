@@ -222,7 +222,7 @@ export default function GewerbegasPage() {
       </section>
 
       <section className="bg-soft py-20 sm:py-24" aria-labelledby="faq-title">
-        <div className="container-page grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="container-page grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <SectionHeading id="faq-title" eyebrow="FAQ" title="Fragen zu Gewerbegas" />
           <FaqList items={faq} />
         </div>

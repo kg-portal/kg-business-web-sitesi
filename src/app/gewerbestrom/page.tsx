@@ -173,7 +173,7 @@ export default function GewerbestromPage() {
       </section>
 
       <section className="py-20 sm:py-24" aria-labelledby="vertrag-title">
-        <div className="container-page grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="container-page grid grid-cols-1 gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <SectionHeading
               id="vertrag-title"
@@ -245,7 +245,7 @@ export default function GewerbestromPage() {
       </section>
 
       <section className="py-20 sm:py-24" aria-labelledby="faq-title">
-        <div className="container-page grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="container-page grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <SectionHeading id="faq-title" eyebrow="FAQ" title="Fragen zu Gewerbestrom" />
           <FaqList items={faq} />
         </div>

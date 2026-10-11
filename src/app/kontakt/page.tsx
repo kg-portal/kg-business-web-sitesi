@@ -25,7 +25,7 @@ export default function KontaktPage() {
         compact
       />
       <section className="py-16 sm:py-20">
-        <div className="container-page grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="container-page grid grid-cols-1 gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="space-y-5">
             {[
               { icon: "phone" as const, label: "Telefon", value: company.phone.display, href: company.phone.href },

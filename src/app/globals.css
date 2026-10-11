@@ -9,8 +9,8 @@
  * Grün (#35CD55) nur als Fläche mit Navy-Text (8.1:1) – nie als Text auf Weiß.
  */
 @theme {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-display: var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
 
   --color-navy-950: #050f29;
   --color-navy-900: #081a40;
@@ -78,12 +78,14 @@
   }
   body {
     @apply bg-white font-sans text-ink antialiased;
-    font-feature-settings: "cv11", "ss01";
   }
   h1, h2, h3, h4 {
     @apply font-display text-navy-900;
     letter-spacing: -0.02em;
     text-wrap: balance;
+    /* Lange deutsche Komposita („Energieversorgung“) auf schmalen Displays trennen */
+    hyphens: auto;
+    overflow-wrap: break-word;
   }
   p { text-wrap: pretty; }
   ::selection { background: rgb(22 139 255 / 0.22); }

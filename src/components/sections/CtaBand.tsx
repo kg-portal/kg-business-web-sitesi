@@ -19,7 +19,7 @@ export function CtaBand({
     <section className="py-16 sm:py-20" aria-labelledby="cta-band-title">
       <div className="container-page">
         <div className="on-dark relative isolate overflow-hidden rounded-[2rem] bg-navy-900 px-6 py-12 text-white shadow-lift sm:px-12 sm:py-16 lg:px-16">
-          <EnergyBackdrop variant="page" className="opacity-90" />
+          <EnergyBackdrop variant="band" />
           <div className="relative grid items-center gap-10 lg:grid-cols-[1.3fr_1fr]">
             <div>
               <h2 id="cta-band-title" className="text-[1.9rem] font-bold leading-tight text-white sm:text-4xl">

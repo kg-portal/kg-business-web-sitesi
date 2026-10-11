@@ -57,7 +57,7 @@ export default async function IndustryPage({ params }: Props) {
       />
 
       <section className="py-20 sm:py-24" aria-labelledby="situation-title">
-        <div className="container-page grid gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="container-page grid grid-cols-1 gap-12 lg:grid-cols-[1.15fr_0.85fr]">
           <div>
             <SectionHeading id="situation-title" eyebrow="Ausgangslage" title={ind.situationTitle} />
             <div className="mt-6 space-y-5 text-lg leading-relaxed text-ink/90">
@@ -123,7 +123,7 @@ export default async function IndustryPage({ params }: Props) {
       </section>
 
       <section className="bg-soft py-20 sm:py-24" aria-labelledby="faq-title">
-        <div className="container-page grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="container-page grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <SectionHeading id="faq-title" eyebrow="FAQ" title={`Häufige Fragen aus der Branche ${ind.short}`} />
           <FaqList items={ind.faq} />
         </div>

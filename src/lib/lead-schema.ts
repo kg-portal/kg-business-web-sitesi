@@ -7,8 +7,9 @@ import { z } from "zod";
 import { parseGermanNumber } from "./format";
 import { normalizePhone } from "./phone";
 
-// Deutsche Standardmeldungen als Rückfallebene
-z.config(z.locales.de());
+// Deutsche Standardmeldungen als Rückfallebene; jitless: kein eval/new Function
+// (verträgt sich mit der strengen Content-Security-Policy ohne 'unsafe-eval')
+z.config({ ...z.locales.de(), jitless: true });
 
 export const CONSENT_TEXT_VERSION = "2026-10-v1";
 

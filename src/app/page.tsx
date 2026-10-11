@@ -100,7 +100,7 @@ export default function HomePage() {
       <section className="on-dark relative isolate overflow-hidden bg-navy-900 text-white" aria-labelledby="hero-title">
         <EnergyBackdrop variant="home" />
         <div className="container-page relative grid items-center gap-12 pb-28 pt-28 sm:pt-36 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-14 xl:gap-16 lg:pb-40 lg:pt-44">
-          <div className="animate-fade-up">
+          <div>
             <p className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.06] px-3.5 py-1.5 text-[0.8rem] font-semibold text-on-dark backdrop-blur">
               <span className="relative flex size-2">
                 <span className="absolute inline-flex size-full rounded-full bg-energy-400 opacity-60 motion-safe:animate-ping" />
@@ -254,7 +254,7 @@ export default function HomePage() {
 
       {/* PROZESS */}
       <section className="on-dark relative isolate overflow-hidden bg-navy-900 py-20 text-white sm:py-28" aria-labelledby="ablauf-title">
-        <EnergyBackdrop variant="page" className="opacity-70" />
+        <EnergyBackdrop variant="band" />
         <div className="container-page relative">
           <SectionHeading
             id="ablauf-title"
@@ -420,7 +420,7 @@ export default function HomePage() {
 
       {/* FAQ */}
       <section className="bg-soft py-20 sm:py-28" aria-labelledby="faq-title" id="faq">
-        <div className="container-page grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="container-page grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <SectionHeading
               id="faq-title"

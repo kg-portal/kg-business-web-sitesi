@@ -35,7 +35,8 @@ export function PageHero({
       >
         {breadcrumbs ? <Breadcrumbs items={breadcrumbs} /> : null}
         <div className={cn("mt-8 grid items-center gap-10 lg:gap-14", aside && "lg:grid-cols-[1.15fr_0.85fr]")}>
-          <div className="animate-fade-up">
+          {/* Kein Einblenden des Textblocks: er ist meist das LCP-Element */}
+          <div>
             {eyebrow ? (
               <p className="eyebrow">
                 <span className="h-px w-6 bg-current opacity-60" aria-hidden="true" />

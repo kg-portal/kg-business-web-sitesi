@@ -9,14 +9,8 @@ import { organizationSchema, websiteSchema } from "@/lib/schema";
 import { isIndexable, siteConfig } from "@/lib/site";
 import "./globals.css";
 
-// Selbst gehostete Schriften (SIL OFL) – keine Verbindung zu Google Fonts.
-const inter = localFont({
-  src: "./fonts/Inter-latin-var.woff2",
-  variable: "--font-inter",
-  display: "swap",
-  weight: "100 900",
-});
-
+// Selbst gehostete Schrift (SIL OFL) – keine Verbindung zu Google Fonts.
+// Eine Familie für Überschriften und Fließtext spart einen Font-Download.
 const jakarta = localFont({
   src: "./fonts/PlusJakartaSans-latin-var.woff2",
   variable: "--font-jakarta",
@@ -49,7 +43,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de" className={`${inter.variable} ${jakarta.variable}`}>
+    <html lang="de" className={jakarta.variable}>
       <body className="flex min-h-dvh flex-col">
         <SiteHeader />
         <main id="main" tabIndex={-1} className="flex-1 outline-none">

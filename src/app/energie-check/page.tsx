@@ -30,7 +30,7 @@ export default function EnergieCheckPage() {
       </section>
 
       <section className="relative z-10 -mt-28 pb-20 lg:-mt-32" aria-label="Energie-Check Formular">
-        <div className="container-page grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] xl:grid-cols-[minmax(0,1fr)_22rem]">
+        <div className="container-page grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] xl:grid-cols-[minmax(0,1fr)_22rem]">
           <div className="min-w-0">
             <Suspense
               fallback={

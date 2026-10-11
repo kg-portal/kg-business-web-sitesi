@@ -73,7 +73,7 @@ export default async function ArticlePage({ params }: Props) {
         </p>
       </PageHero>
 
-      <div className="container-page grid gap-12 py-14 sm:py-16 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-16">
+      <div className="container-page grid grid-cols-1 gap-12 py-14 sm:py-16 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-16">
         <article className="min-w-0 max-w-3xl">
           <ArticleBody blocks={a.blocks} />
 

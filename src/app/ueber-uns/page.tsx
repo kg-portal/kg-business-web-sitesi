@@ -73,7 +73,7 @@ export default function UeberUnsPage() {
       </section>
 
       <section className="py-20 sm:py-24" aria-labelledby="rolle-title">
-        <div className="container-page grid gap-8 lg:grid-cols-2">
+        <div className="container-page grid grid-cols-1 gap-8 lg:grid-cols-2">
           <div className="rounded-3xl border border-line bg-white p-8 shadow-card">
             <h2 id="rolle-title" className="text-2xl font-bold">
               Unsere Rolle am Energiemarkt

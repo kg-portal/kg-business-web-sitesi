@@ -69,7 +69,7 @@ export default function DuisburgPage() {
         </div>
       </section>
       <section className="bg-soft py-20 sm:py-24" aria-labelledby="gebiet-title">
-        <div className="container-page grid gap-12 lg:grid-cols-[1fr_1fr]">
+        <div className="container-page grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1fr]">
           <div>
             <SectionHeading id="gebiet-title" eyebrow="Einsatzgebiet" title="Wo wir beraten" />
             <p className="mt-6 text-lg leading-relaxed text-ink/90">
@@ -88,7 +88,7 @@ export default function DuisburgPage() {
         </div>
       </section>
       <section className="py-20 sm:py-24" aria-labelledby="faq-title">
-        <div className="container-page grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="container-page grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <SectionHeading id="faq-title" eyebrow="FAQ" title="Fragen zur Beratung in Duisburg" />
           <FaqList items={faq} />
         </div>

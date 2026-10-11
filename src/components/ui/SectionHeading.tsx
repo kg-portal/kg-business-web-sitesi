@@ -26,7 +26,7 @@ export function SectionHeading({
           {eyebrow}
         </p>
       ) : null}
-      <Tag id={id} className="mt-3 text-[2rem] font-bold leading-[1.1] sm:text-[2.5rem] lg:text-[2.85rem] on-dark:text-white">
+      <Tag id={id} className="mt-3 text-[1.8rem] font-bold leading-[1.12] sm:text-[2.5rem] lg:text-[2.85rem] on-dark:text-white">
         {title}
       </Tag>
       {lead ? <div className="mt-5 text-lg leading-relaxed text-muted on-dark:text-on-dark-muted">{lead}</div> : null}

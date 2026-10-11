@@ -65,7 +65,7 @@ export default function PrivatkundenPage() {
       />
 
       <section className="relative z-10 -mt-10 pb-8" aria-label="Privatstrom und Privatgas">
-        <div className="container-page grid gap-5 md:grid-cols-2">
+        <div className="container-page grid grid-cols-1 gap-5 md:grid-cols-2">
           {[
             { href: "/privatkunden/strom", icon: "zap" as const, title: "Privatstrom", text: "Haushaltsstrom prüfen – von der Grundversorgung bis zur Wärmepumpe." },
             { href: "/privatkunden/gas", icon: "flame" as const, title: "Privatgas", text: "Gas für Heizung und Warmwasser – inklusive CO₂-Preis verständlich erklärt." },
@@ -121,7 +121,7 @@ export default function PrivatkundenPage() {
       </section>
 
       <section className="py-20 sm:py-24" aria-labelledby="faq-title">
-        <div className="container-page grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="container-page grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <SectionHeading id="faq-title" eyebrow="FAQ" title="Fragen von Privatkunden" />
           <FaqList items={faq} />
         </div>

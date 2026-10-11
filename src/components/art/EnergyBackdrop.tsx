@@ -6,8 +6,17 @@ import { cn } from "@/lib/cn";
  * Strommast, Windrad und Produktionshalle. Animationen respektieren
  * prefers-reduced-motion (globale Regel in globals.css).
  */
-export function EnergyBackdrop({ variant = "home", className }: { variant?: "home" | "page"; className?: string }) {
+export function EnergyBackdrop({ variant = "home", className }: { variant?: "home" | "page" | "band"; className?: string }) {
   const isHome = variant === "home";
+  if (variant === "band") {
+    // Leichte Variante ohne SVG für Abschnitte unterhalb des Heros (weniger HTML/RSC-Payload)
+    return (
+      <div aria-hidden="true" className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}>
+        <div className="absolute inset-0 bg-[radial-gradient(900px_420px_at_85%_0%,rgb(22_139_255/0.30),transparent_60%),radial-gradient(700px_380px_at_0%_100%,rgb(53_205_85/0.14),transparent_60%),linear-gradient(180deg,#081a40_0%,#0b2152_100%)]" />
+        <div className="bg-grid-dark absolute inset-0 [mask-image:radial-gradient(ellipse_at_60%_20%,black_10%,transparent_75%)]" />
+      </div>
+    );
+  }
   return (
     <div aria-hidden="true" className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}>
       {/* Farbverläufe */}
