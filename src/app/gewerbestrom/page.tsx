@@ -189,7 +189,7 @@ export default function GewerbestromPage() {
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {["Beschaffung", "Vertrieb", "Marge"].map((t) => (
-                  <span key={t} className="rounded-full bg-energy-400/20 px-3 py-1 text-xs font-semibold text-energy-700">
+                  <span key={t} className="rounded-full bg-energy-400/20 px-3 py-1 text-xs font-semibold text-energy-800">
                     {t}
                   </span>
                 ))}

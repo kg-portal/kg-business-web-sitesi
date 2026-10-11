@@ -102,7 +102,7 @@ export default async function IndustryPage({ params }: Props) {
           <ul className="mt-12 grid gap-5 md:grid-cols-2">
             {ind.needs.map((n, i) => (
               <li key={n.title} className="flex gap-5 rounded-2xl border border-line bg-white p-6 shadow-card">
-                <span className="font-display text-3xl font-extrabold text-electric-500/30">{String(i + 1).padStart(2, "0")}</span>
+                <span className="font-display text-3xl font-extrabold text-electric-500" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
                 <div>
                   <h3 className="text-lg font-bold">{n.title}</h3>
                   <p className="mt-2 leading-relaxed text-muted">{n.text}</p>

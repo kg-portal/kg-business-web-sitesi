@@ -26,3 +26,4 @@ coverage/
 # System
 .DS_Store
 *.log
+.e2e-data/

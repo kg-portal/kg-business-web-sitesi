@@ -77,6 +77,7 @@ export function SiteHeader() {
   };
 
   return (
+    <>
     <header
       data-solid={solid ? "true" : "false"}
       className={cn(
@@ -225,8 +226,10 @@ export function SiteHeader() {
           <MobileMenuButton open={mobileOpen} solid={solid} onToggle={() => setMobileOpen((v) => !v)} />
         </div>
       </div>
-      <MobileNav open={mobileOpen} pathname={pathname} onClose={() => setMobileOpen(false)} />
     </header>
+      {/* Außerhalb des Headers: dessen backdrop-filter wäre sonst Bezugsrahmen für position:fixed */}
+      <MobileNav open={mobileOpen} pathname={pathname} onClose={() => setMobileOpen(false)} />
+    </>
   );
 }
 

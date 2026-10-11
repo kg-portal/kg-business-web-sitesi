@@ -84,7 +84,8 @@ export function getDb(): DB {
   db.pragma("secure_delete = ON");
   migrate(db);
   // Nur der Dienstbenutzer darf lesen/schreiben (zusätzlich zum 0700-Verzeichnis)
-  for (const f of [file, `${file}-wal`, `${file}-shm`]) if (existsSync(f)) chmodSync(f, 0o600);
+  // Laufzeitdaten – nicht Teil des Builds (turbopackIgnore verhindert unnötiges File-Tracing)
+  for (const f of [file, `${file}-wal`, `${file}-shm`]) if (existsSync(/*turbopackIgnore: true*/ f)) chmodSync(/*turbopackIgnore: true*/ f, 0o600);
   instance = { db, file };
   return db;
 }
