@@ -3,6 +3,22 @@ import path from "node:path";
 import type { AppConfig } from "../config";
 import type { CrmAdapter, CrmLeadPayload, CrmSendResult } from "./types";
 
+const MASK = "[maskiert]";
+
+/** Ersetzt personenbezogene Felder für Protokoll-/Testausgaben. */
+export function maskPersonalData(p: CrmLeadPayload): CrmLeadPayload {
+  const m = (v: string | null) => (v ? MASK : null);
+  return {
+    ...p,
+    firma: m(p.firma),
+    ansprechpartner: MASK,
+    telefonnummer: m(p.telefonnummer),
+    email: MASK,
+    notizen: p.notizen ? MASK : "",
+    anhaenge: p.anhaenge.map((a) => ({ ...a, dateiname: MASK })),
+  };
+}
+
 export class DisabledCrmAdapter implements CrmAdapter {
   readonly mode = "disabled" as const;
   async send(): Promise<CrmSendResult> {
@@ -22,7 +38,8 @@ export class MockCrmAdapter implements CrmAdapter {
     this.sent.push({ idempotencyKey, payload });
     if (this.outboxFile) {
       await mkdir(path.dirname(this.outboxFile), { recursive: true, mode: 0o700 });
-      await appendFile(this.outboxFile, `${JSON.stringify({ at: new Date().toISOString(), idempotencyKey, payload })}\n`, { mode: 0o600 });
+      // Personenbezogene Felder werden in der Datei maskiert (Klartext nur im Arbeitsspeicher)
+      await appendFile(this.outboxFile, `${JSON.stringify({ at: new Date().toISOString(), idempotencyKey, payload: maskPersonalData(payload) })}\n`, { mode: 0o600 });
     }
     return { ok: true, externalId: `mock-${payload.referenzId}` };
   }

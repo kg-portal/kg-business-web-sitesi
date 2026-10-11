@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { HttpCrmAdapter, MockCrmAdapter } from "@/server/crm/adapters";
+import { HttpCrmAdapter, maskPersonalData, MockCrmAdapter } from "@/server/crm/adapters";
 import { BACKOFF_MINUTES, nextAttemptAt, processCrmQueue, requeueHeldLeads } from "@/server/crm/dispatcher";
 import { toCrmPayload } from "@/server/crm/mapping";
 import type { CrmAdapter, CrmSendResult } from "@/server/crm/types";
@@ -46,6 +46,18 @@ describe("toCrmPayload", () => {
     expect(p.notizen).toContain("Anzahl Lieferstellen: 3");
     expect(p.notizen).toContain("28,5 ct/kWh");
     expect(p.anhaenge[0]).toMatchObject({ dateiname: "Rechnung.pdf", virenscan: "clean" });
+  });
+});
+
+describe("maskPersonalData", () => {
+  it("maskiert Name, Kontakt, Notizen und Dateinamen, behält Sachdaten", () => {
+    const data = energieCheckSchema.parse({ ...validEnergieCheck, nachricht: "Bitte anrufen" });
+    const p = toCrmPayload({ reference: "KGB-1", created_at: "2026-10-11T00:00:00Z", duplicate_of: null, consent_text_version: "v1" }, { formType: "energie-check", data }, [
+      { originalName: "Rechnung Mustermann.pdf", mime: "application/pdf", size: 1, sha256: "x", scanStatus: "clean" },
+    ]);
+    const masked = JSON.stringify(maskPersonalData(p));
+    for (const secret of ["Mustermann", "max@muster-gmbh.de", "+492031234567", "Bitte anrufen", "Muster GmbH"]) expect(masked).not.toContain(secret);
+    expect(maskPersonalData(p)).toMatchObject({ kundentyp: "gewerbe", energieart: "strom", adresse: { plz: "47055" } });
   });
 });
 

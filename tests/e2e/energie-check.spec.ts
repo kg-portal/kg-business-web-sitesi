@@ -67,7 +67,10 @@ test.describe("Energie-Check", () => {
     await expect.poll(() => leadMeta(reference)?.crm_status, { timeout: 10_000 }).toBe("sent");
     const line = mockOutbox().split("\n").find((l) => l.includes(reference))!;
     const payload = (JSON.parse(line) as { payload: Record<string, unknown> }).payload;
-    expect(payload).toMatchObject({ quelle: "KG Business Website", kundentyp: "privat", energieart: "gas", telefonnummer: "+491701234567", firma: null });
+    expect(payload).toMatchObject({ quelle: "KG Business Website", kundentyp: "privat", energieart: "gas", firma: null, adresse: { plz: "47055", stadt: "Duisburg" } });
+    // Personenbezogene Daten stehen nicht im Klartext in der Mock-Outbox
+    expect(payload).toMatchObject({ ansprechpartner: "[maskiert]", email: "[maskiert]", telefonnummer: "[maskiert]" });
+    expect(line).not.toContain(unique);
   });
 
   test("Pflichtfelder werden je Schritt geprüft und verständlich gemeldet", async ({ page }) => {
