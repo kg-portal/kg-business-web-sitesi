@@ -1,4 +1,5 @@
 import {
+  ArrowLeft,
   ArrowRight,
   BadgeCheck,
   BedDouble,
@@ -28,6 +29,7 @@ import {
   Mail,
   MapPin,
   Phone,
+  Plus,
   Receipt,
   Route,
   Scale,
@@ -50,6 +52,7 @@ import {
  */
 const registry = {
   arrow: ArrowRight,
+  arrowLeft: ArrowLeft,
   badge: BadgeCheck,
   bed: BedDouble,
   book: BookOpen,
@@ -78,6 +81,7 @@ const registry = {
   mail: Mail,
   mapPin: MapPin,
   phone: Phone,
+  plus: Plus,
   receipt: Receipt,
   route: Route,
   scale: Scale,

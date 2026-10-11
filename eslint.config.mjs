@@ -5,6 +5,12 @@ const config = [
   ...nextCoreWebVitals,
   ...nextTypescript,
   {
+    rules: {
+      // Bewusst verworfene Werte mit Unterstrich kennzeichnen
+      "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_", varsIgnorePattern: "^_", ignoreRestSiblings: true }],
+    },
+  },
+  {
     ignores: [".next/**", "node_modules/**", "playwright-report/**", "test-results/**", "data/**", "next-env.d.ts"],
   },
 ];

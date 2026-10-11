@@ -26,6 +26,7 @@ export function Segmented<T extends string>({
   columns,
   error,
   legendClassName,
+  stackOnMobile = false,
 }: {
   legend: string;
   name: string;
@@ -37,6 +38,8 @@ export function Segmented<T extends string>({
   columns?: 2 | 3;
   error?: string;
   legendClassName?: string;
+  /** Auf schmalen Bildschirmen untereinander statt nebeneinander */
+  stackOnMobile?: boolean;
 }) {
   const id = useId();
   const cols = columns ?? (options.length === 3 ? 3 : 2);
@@ -45,7 +48,7 @@ export function Segmented<T extends string>({
       <legend className={cn("mb-2 text-sm font-semibold", tone === "dark" ? "text-on-dark" : "text-navy-900", legendClassName)}>
         {legend}
       </legend>
-      <div className={cn("grid gap-2", cols === 3 ? "grid-cols-3" : "grid-cols-2")}>
+      <div className={cn("grid gap-2", stackOnMobile ? (cols === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2") : cols === 3 ? "grid-cols-3" : "grid-cols-2")}>
         {options.map((opt) => {
           const checked = value === opt.value;
           return (

@@ -17,8 +17,7 @@
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "check": "npm run typecheck && npm run lint && npm run test",
-    "crm:dispatch": "node --experimental-strip-types scripts/crm-dispatch.ts",
-    "data:purge": "node --experimental-strip-types scripts/purge-data.ts"
+    "leads": "tsx scripts/leads.ts"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.3.0",
@@ -30,7 +29,9 @@
     "nodemailer": "^10.1.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
+    "sharp": "^0.35.5",
     "tailwind-merge": "^3.7.0",
+    "tsx": "^4.23.15",
     "zod": "^4.6.5"
   },
   "devDependencies": {
